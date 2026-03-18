@@ -1,0 +1,531 @@
+/**
+ * External Bot Frontend - Styling
+ * ==============================
+ * 
+ * This stylesheet defines all visual styling for the chatbot interface
+ * Includes responsive design for mobile and desktop
+ * Uses modern CSS with flexbox and grid for layout
+ */
+
+/* ==================== GLOBAL STYLES ==================== */
+
+/* Reset browser defaults and set base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root element styles */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+/* Body styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ==================== CONTAINER LAYOUT ==================== */
+
+/* Main container - centers content and sets max width */
+.container {
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ==================== HEADER STYLES ==================== */
+
+/* Header section at top of chat */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Main heading */
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Subtitle under heading */
+.header .subtitle {
+    font-size: 0.95em;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ==================== CHAT AREA STYLES ==================== */
+
+/* Chat area container - holds messages and input */
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Chat messages container - scrollable area for messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Scrollbar styling for chat messages */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #e9ecef;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* ==================== MESSAGE STYLES ==================== */
+
+/* Base message styles */
+.message {
+    display: flex;
+    margin-bottom: 5px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Animation for new messages */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User message styling (right side, blue) */
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+    background: #667eea;
+    color: white;
+    border-radius: 15px 15px 0 15px;
+    max-width: 70%;
+}
+
+/* Assistant message styling (left side, light gray) */
+.assistant-message {
+    justify-content: flex-start;
+}
+
+.assistant-message .message-content {
+    background: #e9ecef;
+    color: #2c3e50;
+    border-radius: 15px 15px 15px 0;
+    max-width: 70%;
+}
+
+/* Tool message styling (special formatting) */
+.tool-message {
+    justify-content: flex-start;
+}
+
+.tool-message .message-content {
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 12px;
+    border-left: 4px solid #ffc107;
+    max-width: 85%;
+}
+
+/* Message content padding */
+.message-content {
+    padding: 12px 16px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* Message content text */
+.message-content p {
+    margin: 0 0 8px 0;
+    font-size: 0.95em;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Message lists */
+.message-content ul,
+.message-content ol {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.message-content li {
+    margin-bottom: 5px;
+}
+
+/* Message timestamp */
+.message-time {
+    font-size: 0.75em;
+    opacity: 0.5;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+/* Tool information styling */
+.tool-info {
+    font-size: 0.9em;
+}
+
+.tool-info strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tool-reasoning {
+    margin: 8px 0;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.tool-result {
+    margin-top: 10px;
+}
+
+.tool-result summary {
+    cursor: pointer;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.tool-result summary:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tool-result pre {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-size: 0.75em;
+    overflow-x: auto;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tool-error {
+    color: #dc3545;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* ==================== INPUT AREA STYLES ==================== */
+
+/* Input area container */
+.input-area {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Chat form layout */
+.chat-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Message input field */
+.message-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 0.95em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for input */
+.message-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Disabled input state */
+.message-input:disabled {
+    background: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Send button */
+.send-button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+/* Send button hover state */
+.send-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Send button active state */
+.send-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Send button disabled state */
+.send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==================== LOADING INDICATOR ==================== */
+
+/* Loading indicator container */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: #f0f2f5;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Typing indicator (animated dots) */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+}
+
+.typing-indicator .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #667eea;
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+
+.loading-indicator p {
+    margin: 0;
+    color: #667eea;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* ==================== ERROR MESSAGE ==================== */
+
+/* Error message styling */
+.error-message {
+    padding: 12px 16px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 8px;
+    border-left: 4px solid #f5c6cb;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+
+/* Footer section */
+.footer {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet devices (768px and below) */
+@media (max-width: 768px) {
+    /* Adjust container height for smaller screens */
+    .container {
+        height: 95vh;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    /* Increase max-width of messages on mobile */
+    .user-message .message-content,
+    .assistant-message .message-content,
+    .tool-message .message-content {
+        max-width: 90%;
+    }
+    
+    /* Adjust header font size */
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    /* Improve spacing for smaller screens */
+    .chat-messages {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .input-area {
+        padding: 12px 15px;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    /* Full screen on mobile */
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        border-radius: 0;
+    }
+    
+    /* Smaller header on mobile */
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.5em;
+    }
+    
+    .header .subtitle {
+        font-size: 0.85em;
+    }
+    
+    /* Stack form vertically on very small screens if needed */
+    .chat-form {
+        flex-wrap: wrap;
+    }
+    
+    /* Ensure send button is clickable on mobile */
+    .send-button {
+        min-width: 80px;
+        padding: 10px 20px;
+    }
+    
+    /* Larger tap targets */
+    .message-input,
+    .send-button {
+        min-height: 44px;
+    }
+    
+    /* Better readability on small screens */
+    .message-content {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1f1f2e 0%, #16213e 100%);
+    }
+    
+    .container {
+        background: #0f1419;
+    }
+    
+    .chat-messages {
+        background: #1a1a2e;
+    }
+    
+    .assistant-message .message-content {
+        background: #16213e;
+        color: #e0e0e0;
+    }
+    
+    .input-area,
+    .footer {
+        background: #0f1419;
+    }
+    
+    .message-input {
+        background: #1a1a2e;
+        color: white;
+        border-color: #16213e;
+    }
+}

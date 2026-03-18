@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding and viewport settings for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Bot - AI Chatbot</title>
+    
+    <!-- Link to CSS stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main container for the application -->
+    <div class="container">
+        <!-- Header section with title -->
+        <div class="header">
+            <h1>🤖 External Bot</h1>
+            <p class="subtitle">AI Chatbot with Real-time Tool Integration</p>
+        </div>
+
+        <!-- Main chat area -->
+        <div class="chat-area">
+            <!-- Chat messages display area -->
+            <!-- Messages will be dynamically added here by JavaScript -->
+            <div id="chatMessages" class="chat-messages">
+                <!-- Welcome message on initial load -->
+                <div class="message assistant-message">
+                    <div class="message-content">
+                        <p>👋 Hello! I'm External Bot, an AI assistant with real-time data access.</p>
+                        <p>I can help you with various tasks, including:</p>
+                        <ul>
+                            <li>💬 General conversation and Q&A</li>
+                            <li>🌤️ Weather information for any location</li>
+                            <li>🧠 Complex reasoning and explanations</li>
+                        </ul>
+                        <p>Try asking me something like: "What's the weather in London?" or "Tell me a joke!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input area for user messages -->
+            <div class="input-area">
+                <!-- Form for sending messages -->
+                <form id="chatForm" class="chat-form">
+                    <!-- Text input field for user messages -->
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        class="message-input" 
+                        placeholder="Type your message here... (e.g., 'What's the weather in Tokyo?')" 
+                        autocomplete="off"
+                        required
+                    >
+                    
+                    <!-- Send button -->
+                    <button 
+                        type="submit" 
+                        class="send-button" 
+                        id="sendButton"
+                        title="Send message (or press Enter)"
+                    >
+                        ➤ Send
+                    </button>
+                </form>
+
+                <!-- Loading indicator shown while waiting for response -->
+                <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                    <div class="typing-indicator">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <p>Bot is thinking...</p>
+                </div>
+
+                <!-- Error message display area -->
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Footer with information -->
+        <div class="footer">
+            <p>Powered by GPT-4 Turbo via OpenRouter | Real-time Weather Data</p>
+        </div>
+    </div>
+
+    <!-- JavaScript script for chat functionality -->
+    <script src="script.js"></script>
+</body>
+</html>

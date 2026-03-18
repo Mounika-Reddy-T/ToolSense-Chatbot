@@ -1,0 +1,183 @@
+[2026-03-18 10:43:49] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 10:43:50] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 10:51:26] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 10:51:26] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 10:51:35] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 10:51:35] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 10:53:01] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 10:53:01] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 10:53:03] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 10:53:04] INFO - main - Backend initialized in development mode
+[2026-03-18 10:53:04] INFO - main - ==================================================
+[2026-03-18 10:53:04] INFO - main - External Bot Backend Starting...
+[2026-03-18 10:53:04] INFO - main - Environment: development
+[2026-03-18 10:53:04] INFO - main - Debug Mode: True
+[2026-03-18 10:53:04] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 10:53:04] INFO - main - ==================================================
+[2026-03-18 10:54:27] INFO - main - Received chat message: Hi...
+[2026-03-18 10:54:27] INFO - services.llm_service - Calling LLM with user message: Hi...
+[2026-03-18 10:54:30] INFO - services.llm_service - LLM responded directly without tool invocation
+[2026-03-18 10:54:30] INFO - main - Successfully processed chat message
+[2026-03-18 10:54:45] INFO - main - Received chat message: What is weather in hyderabad?...
+[2026-03-18 10:54:45] INFO - services.llm_service - Calling LLM with user message: What is weather in hyderabad?...
+[2026-03-18 10:54:48] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'Hyderabad'}
+[2026-03-18 10:54:48] INFO - main - LLM decided to use tool: weather
+[2026-03-18 10:54:48] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'Hyderabad'}
+[2026-03-18 10:54:48] INFO - services.tool_orchestrator - Fetching weather for Hyderabad in metric units
+[2026-03-18 10:54:48] INFO - services.weather_service - Fetching weather data for: Hyderabad (unit: metric)
+[2026-03-18 10:54:49] ERROR - services.weather_service - HTTP Error fetching weather for Hyderabad: 401 - {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+[2026-03-18 10:54:49] WARNING - services.tool_orchestrator - Tool weather returned error: Could not fetch weather data for 'Hyderabad'. Location may not exist or API limits exceeded.
+[2026-03-18 10:54:49] INFO - services.llm_service - Calling LLM with user message: What is weather in hyderabad?...
+[2026-03-18 10:54:52] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'Hyderabad'}
+[2026-03-18 10:54:52] ERROR - main - Validation error: 1 validation error for ChatResponse
+assistant_reply
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.5/v/string_type
+[2026-03-18 10:55:21] INFO - main - Received chat message: what is weather in hyberabad?...
+[2026-03-18 10:55:21] INFO - services.llm_service - Calling LLM with user message: what is weather in hyberabad?...
+[2026-03-18 10:55:24] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'Hyderabad', 'unit': 'metric'}
+[2026-03-18 10:55:24] INFO - main - LLM decided to use tool: weather
+[2026-03-18 10:55:24] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'Hyderabad', 'unit': 'metric'}
+[2026-03-18 10:55:24] INFO - services.tool_orchestrator - Fetching weather for Hyderabad in metric units
+[2026-03-18 10:55:24] INFO - services.weather_service - Fetching weather data for: Hyderabad (unit: metric)
+[2026-03-18 10:55:26] ERROR - services.weather_service - HTTP Error fetching weather for Hyderabad: 401 - {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+[2026-03-18 10:55:26] WARNING - services.tool_orchestrator - Tool weather returned error: Could not fetch weather data for 'Hyderabad'. Location may not exist or API limits exceeded.
+[2026-03-18 10:55:26] INFO - services.llm_service - Calling LLM with user message: what is weather in hyberabad?...
+[2026-03-18 10:55:29] INFO - services.llm_service - LLM responded directly without tool invocation
+[2026-03-18 10:55:29] INFO - main - Successfully processed chat message
+[2026-03-18 11:02:25] INFO - main - External Bot Backend Shutting Down...
+[2026-03-18 11:02:31] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 11:02:32] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 11:02:33] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:02:34] INFO - main - Backend initialized in development mode
+[2026-03-18 11:02:34] INFO - main - ==================================================
+[2026-03-18 11:02:34] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:02:34] INFO - main - Environment: development
+[2026-03-18 11:02:34] INFO - main - Debug Mode: True
+[2026-03-18 11:02:34] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:02:34] INFO - main - ==================================================
+[2026-03-18 11:02:58] INFO - main - Received chat message: what is weather in Pune...
+[2026-03-18 11:02:58] INFO - services.llm_service - Calling LLM with user message: what is weather in Pune...
+[2026-03-18 11:03:01] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'Pune'}
+[2026-03-18 11:03:01] INFO - main - LLM decided to use tool: weather
+[2026-03-18 11:03:01] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'Pune'}
+[2026-03-18 11:03:01] INFO - services.tool_orchestrator - Fetching weather for Pune in metric units
+[2026-03-18 11:03:01] INFO - services.weather_service - Fetching weather data for: Pune (unit: metric)
+[2026-03-18 11:03:02] ERROR - services.weather_service - HTTP Error fetching weather for Pune: 401 - {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+[2026-03-18 11:03:02] WARNING - services.tool_orchestrator - Tool weather returned error: Could not fetch weather data for 'Pune'. Location may not exist or API limits exceeded.
+[2026-03-18 11:03:02] INFO - services.llm_service - Calling LLM with user message: what is weather in Pune...
+[2026-03-18 11:03:05] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'Pune'}
+[2026-03-18 11:03:05] ERROR - main - Validation error: 1 validation error for ChatResponse
+assistant_reply
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.5/v/string_type
+[2026-03-18 11:04:33] INFO - main - Received chat message: what is weather in Pune...
+[2026-03-18 11:04:33] INFO - services.llm_service - Calling LLM with user message: what is weather in Pune...
+[2026-03-18 11:04:34] ERROR - services.llm_service - OpenRouter API error: 402 - {"error":{"message":"This request requires more credits, or fewer max_tokens. You requested up to 1024 tokens, but can only afford 1009. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account","code":402,"metadata":{"provider_name":null}},"user_id":"user_3Aq51ivhB9XoIe9rtaqPH4LvBql"}
+[2026-03-18 11:04:34] INFO - main - Successfully processed chat message
+[2026-03-18 11:09:44] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 11:09:44] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 11:09:47] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:09:47] INFO - main - Backend initialized in development mode
+[2026-03-18 11:09:47] INFO - main - ==================================================
+[2026-03-18 11:09:47] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:09:47] INFO - main - Environment: development
+[2026-03-18 11:09:47] INFO - main - Debug Mode: True
+[2026-03-18 11:09:47] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:09:47] INFO - main - ==================================================
+[2026-03-18 11:10:16] INFO - main - Received chat message: What's the weather in London?...
+[2026-03-18 11:10:16] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:10:17] ERROR - services.llm_service - OpenRouter API error: 402 - {"error":{"message":"This request requires more credits, or fewer max_tokens. You requested up to 1024 tokens, but can only afford 1009. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account","code":402,"metadata":{"provider_name":null}},"user_id":"user_3Aq51ivhB9XoIe9rtaqPH4LvBql"}
+[2026-03-18 11:10:17] INFO - main - Successfully processed chat message
+[2026-03-18 11:14:38] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 11:14:39] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 11:14:40] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:14:41] INFO - main - Backend initialized in development mode
+[2026-03-18 11:14:41] INFO - main - ==================================================
+[2026-03-18 11:14:41] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:14:41] INFO - main - Environment: development
+[2026-03-18 11:14:41] INFO - main - Debug Mode: True
+[2026-03-18 11:14:41] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:14:41] INFO - main - ==================================================
+[2026-03-18 11:14:49] INFO - main - Received chat message: What's the weather in London?...
+[2026-03-18 11:14:49] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:14:52] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:14:52] INFO - main - LLM decided to use tool: weather
+[2026-03-18 11:14:52] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'London'}
+[2026-03-18 11:14:52] INFO - services.tool_orchestrator - Fetching weather for London in metric units
+[2026-03-18 11:14:52] INFO - services.weather_service - Fetching weather data for: London (unit: metric)
+[2026-03-18 11:14:53] ERROR - services.weather_service - HTTP Error fetching weather for London: 401 - {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+[2026-03-18 11:14:53] WARNING - services.tool_orchestrator - Tool weather returned error: Could not fetch weather data for 'London'. Location may not exist or API limits exceeded.
+[2026-03-18 11:14:53] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:14:55] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:14:55] ERROR - main - Validation error: 1 validation error for ChatResponse
+assistant_reply
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.5/v/string_type
+[2026-03-18 11:17:54] INFO - main - External Bot Backend Shutting Down...
+[2026-03-18 11:17:56] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:17:56] INFO - main - Backend initialized in development mode
+[2026-03-18 11:17:56] INFO - main - ==================================================
+[2026-03-18 11:17:56] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:17:56] INFO - main - Environment: development
+[2026-03-18 11:17:56] INFO - main - Debug Mode: True
+[2026-03-18 11:17:56] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:17:56] INFO - main - ==================================================
+[2026-03-18 11:18:00] INFO - main - External Bot Backend Shutting Down...
+[2026-03-18 11:18:03] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:18:03] INFO - main - Backend initialized in development mode
+[2026-03-18 11:18:03] INFO - main - ==================================================
+[2026-03-18 11:18:03] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:18:03] INFO - main - Environment: development
+[2026-03-18 11:18:03] INFO - main - Debug Mode: True
+[2026-03-18 11:18:03] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:18:03] INFO - main - ==================================================
+[2026-03-18 11:18:26] INFO - main - Received chat message: What's the weather in London?...
+[2026-03-18 11:18:26] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:18:28] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:18:28] INFO - main - LLM decided to use tool: weather
+[2026-03-18 11:18:28] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'London'}
+[2026-03-18 11:18:28] INFO - services.tool_orchestrator - Fetching weather for London in metric units
+[2026-03-18 11:18:28] INFO - services.weather_service - Fetching weather data for: London (unit: metric)
+[2026-03-18 11:18:31] ERROR - services.weather_service - HTTP Error fetching weather for London: 401 - {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+[2026-03-18 11:18:31] WARNING - services.tool_orchestrator - Tool weather returned error: Could not fetch weather data for 'London'. Location may not exist or API limits exceeded.
+[2026-03-18 11:18:31] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:18:33] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:18:33] INFO - main - Successfully processed chat message
+[2026-03-18 11:19:36] INFO - main - External Bot Backend Shutting Down...
+[2026-03-18 11:19:40] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:19:41] INFO - main - Backend initialized in development mode
+[2026-03-18 11:19:41] INFO - main - ==================================================
+[2026-03-18 11:19:41] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:19:41] INFO - main - Environment: development
+[2026-03-18 11:19:41] INFO - main - Debug Mode: True
+[2026-03-18 11:19:41] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:19:41] INFO - main - ==================================================
+[2026-03-18 11:23:03] INFO - __main__ - Backend initialized in development mode
+[2026-03-18 11:23:04] INFO - __main__ - Starting server on 0.0.0.0:8000
+[2026-03-18 11:23:05] INFO - __mp_main__ - Backend initialized in development mode
+[2026-03-18 11:23:06] INFO - main - Backend initialized in development mode
+[2026-03-18 11:23:06] INFO - main - ==================================================
+[2026-03-18 11:23:06] INFO - main - External Bot Backend Starting...
+[2026-03-18 11:23:06] INFO - main - Environment: development
+[2026-03-18 11:23:06] INFO - main - Debug Mode: True
+[2026-03-18 11:23:06] INFO - main - Server: 0.0.0.0:8000
+[2026-03-18 11:23:06] INFO - main - ==================================================
+[2026-03-18 11:23:19] INFO - main - Received chat message: What's the weather in London?...
+[2026-03-18 11:23:19] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:23:23] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:23:23] INFO - main - LLM decided to use tool: weather
+[2026-03-18 11:23:23] INFO - services.tool_orchestrator - Executing tool: weather with arguments: {'location': 'London'}
+[2026-03-18 11:23:23] INFO - services.tool_orchestrator - Fetching weather for London in metric units
+[2026-03-18 11:23:23] INFO - services.weather_service - Fetching weather data for: London (unit: metric)
+[2026-03-18 11:23:24] INFO - services.weather_service - Successfully fetched weather for London
+[2026-03-18 11:23:24] INFO - services.weather_service - Successfully formatted weather response for London, GB
+[2026-03-18 11:23:24] INFO - services.tool_orchestrator - Successfully executed weather tool for London
+[2026-03-18 11:23:24] INFO - services.tool_orchestrator - Successfully formatted result from weather tool
+[2026-03-18 11:23:24] INFO - services.llm_service - Calling LLM with user message: What's the weather in London?...
+[2026-03-18 11:23:26] INFO - services.llm_service - LLM decided to use tool: weather with args: {'location': 'London'}
+[2026-03-18 11:23:26] INFO - main - Successfully processed chat message
+[2026-03-18 11:23:51] INFO - main - Received chat message: hi...
+[2026-03-18 11:23:51] INFO - services.llm_service - Calling LLM with user message: hi...
+[2026-03-18 11:23:53] INFO - services.llm_service - LLM responded directly without tool invocation
+[2026-03-18 11:23:53] INFO - main - Successfully processed chat message

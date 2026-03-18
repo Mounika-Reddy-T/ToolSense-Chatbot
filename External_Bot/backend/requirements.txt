@@ -1,0 +1,22 @@
+# FastAPI and Web Framework
+fastapi==0.104.1          # Modern Python web framework for building APIs
+uvicorn[standard]==0.24.0 # ASGI server to run FastAPI application
+pydantic==2.5.0           # Data validation using Python type annotations
+
+# HTTP and External APIs
+requests==2.31.0          # HTTP library for making requests to external APIs
+httpx==0.25.2             # Modern HTTP client (async support)
+
+# Environment and Configuration
+python-dotenv==1.0.0      # Load environment variables from .env file
+
+# Development and Testing
+pytest==7.4.3             # Testing framework
+pytest-asyncio==0.21.1    # Pytest plugin for testing async code
+black==23.12.0            # Code formatter
+flake8==6.1.0             # Code linter
+mypy==1.7.1               # Static type checker
+
+# Utilities
+python-multipart==0.0.6   # Handle form data and file uploads
+cors==1.0.1               # CORS support helpers
